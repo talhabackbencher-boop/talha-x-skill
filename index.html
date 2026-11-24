@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090710">
+<title>TALHA X SKILL — Anime Database</title>
+<style>
+:root{--bg:#090710;--panel:#12101c;--panel2:#191527;--purple:#9b5cff;--purple2:#6d35c9;--text:#f7f3ff;--muted:#a49bb5;--line:#2a2438;--pink:#ed6bce;--green:#61d6a5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#28134b 0,transparent 36%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}button,input{font:inherit}button{cursor:pointer}.wrap{width:min(1200px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:#0b0912eF;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff12}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:950;letter-spacing:1.5px;font-size:20px}.brand span{color:var(--purple)}.navlinks{display:flex;gap:22px;color:#c9c1d5;font-size:13px}.navlinks a{color:inherit;text-decoration:none}.navlinks a:hover{color:white}.hero{padding:64px 0 38px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:30px}.eyebrow{color:#c6a5ff;text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:800}.hero h1{font-size:clamp(38px,6vw,70px);line-height:.99;letter-spacing:-3px;margin:16px 0}.hero h1 span{background:linear-gradient(90deg,#b889ff,#ed75d0);background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:560px;line-height:1.7;font-size:15px}.hero-art{height:310px;border-radius:24px;overflow:hidden;position:relative;background:linear-gradient(135deg,#32145c,#171027 60%,#471f69);border:1px solid #ffffff20;box-shadow:0 25px 80px #0008}.hero-art:before,.hero-art:after{content:"";position:absolute;border-radius:50%;filter:blur(2px)}.hero-art:before{width:250px;height:250px;right:30px;top:20px;background:radial-gradient(circle at 40% 35%,#edb5ff,#a14eff 40%,#481d82 70%,transparent 72%);opacity:.8}.hero-art:after{width:400px;height:90px;right:-40px;bottom:45px;background:#ff76cf55;transform:rotate(-24deg);filter:blur(25px)}.hero-stamp{position:absolute;z-index:1;left:26px;bottom:25px;font-size:12px;letter-spacing:4px;color:#eadcff}.hero-stamp b{display:block;font-size:28px;letter-spacing:1px;color:white}
+.searchbar{display:flex;gap:10px;margin:20px 0 28px}.searchbox{flex:1;position:relative}.searchbox input{width:100%;background:#151220;border:1px solid var(--line);border-radius:13px;padding:15px 16px 15px 46px;color:white;outline:none}.searchbox input:focus{border-color:var(--purple);box-shadow:0 0 0 3px #9b5cff20}.search-icon{position:absolute;left:16px;top:14px;color:#9c91af}.pillbtn{border:1px solid #62418e;background:#26163d;color:#eadcff;padding:0 18px;border-radius:12px;font-weight:700}.section{padding:22px 0 30px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:18px}.section h2{font-size:21px;margin:0;letter-spacing:-.4px}.section-head p{margin:5px 0 0;color:var(--muted);font-size:12px}.tiny-link{color:#c59bff;background:none;border:0;font-size:12px}.filters{display:flex;gap:8px;overflow:auto;padding:2px 0 15px;scrollbar-width:none}.filter{white-space:nowrap;border:1px solid var(--line);background:#13101c;color:#c7bdd5;padding:8px 13px;border-radius:30px;font-size:12px}.filter.active,.filter:hover{background:#6d35c9;border-color:#9b5cff;color:white}.grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:17px}.card{min-width:0;cursor:pointer;transition:transform .22s}.card:hover{transform:translateY(-6px)}.poster{aspect-ratio:2/2.85;border-radius:13px;overflow:hidden;background:linear-gradient(140deg,#26143d,#15111e);border:1px solid #ffffff12;position:relative}.poster img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:2;transition:transform .35s}.card:hover .poster img{transform:scale(1.045)}.poster .score{position:absolute;top:9px;left:9px;background:#090710d9;border:1px solid #ffffff25;border-radius:7px;padding:5px 7px;font-size:10px;font-weight:800}.poster .score:before{content:"★ ";color:#ffd16a}.poster .fallback{position:absolute;inset:0;display:grid;place-items:center;padding:15px;text-align:center;color:#d9c7f8;font-weight:800;font-size:14px;background:radial-gradient(circle at 70% 20%,#6b3b9d,#1b1428 65%)}.card h3{font-size:13px;line-height:1.35;margin:9px 1px 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.meta{font-size:11px;color:var(--muted)}.status{display:inline-block;color:#bfa2ff;font-size:10px;margin-top:5px}.notice{border:1px solid #584174;background:#171124;border-radius:12px;padding:13px 15px;color:#c7bad8;font-size:12px;line-height:1.6;margin:10px 0 20px}.notice strong{color:#e2ceff}.empty{padding:35px;text-align:center;color:var(--muted);grid-column:1/-1}.loading{color:var(--muted);font-size:12px;padding:14px 0}.footer{margin-top:35px;border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer b{color:white;letter-spacing:1px}.modal{position:fixed;inset:0;z-index:50;background:#05040bdc;backdrop-filter:blur(9px);display:none;overflow:auto;padding:22px}.modal.open{display:block}.detail{max-width:920px;margin:25px auto;background:#100d19;border:1px solid #44335c;border-radius:20px;overflow:hidden;box-shadow:0 30px 100px #000b}.detail-top{display:grid;grid-template-columns:230px 1fr;gap:25px;padding:28px;background:linear-gradient(120deg,#241438,#100d19 65%)}.detail-poster{width:100%;aspect-ratio:2/2.85;object-fit:cover;border-radius:13px;background:#21172e}.detail-copy h2{font-size:30px;margin:8px 0}.detail-copy p{color:#c0b7cd;line-height:1.65;font-size:13px}.close{float:right;background:#ffffff12;border:1px solid #ffffff24;color:white;border-radius:9px;padding:8px 12px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.tag{font-size:10px;padding:6px 9px;border-radius:20px;background:#2a1b40;color:#d8c4ff;border:1px solid #51366f}.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:17px}.fact{background:#ffffff09;padding:10px;border-radius:9px}.fact small{display:block;color:#9f94ae;font-size:10px}.fact b{font-size:12px}.detail-body{padding:24px 28px}.detail-body h3{font-size:16px;margin:15px 0 10px}.season{background:#181422;border:1px solid #30263e;border-radius:12px;padding:14px;margin:10px 0}.season-head{display:flex;justify-content:space-between;gap:10px}.season p{font-size:12px;color:#b4a9c3;line-height:1.5;margin:8px 0}.availability{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.avail{padding:10px;background:#171320;border:1px solid #30263e;border-radius:9px;font-size:11px}.avail b{display:block;margin-bottom:4px}.unknown{color:#e8c77d}.verified{color:var(--green)}.modal-note{font-size:11px;color:#988da7;line-height:1.6}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#2b1b42;border:1px solid #7852a6;padding:10px 15px;border-radius:10px;font-size:12px;z-index:80;display:none}
+@media(max-width:950px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.hero{grid-template-columns:1fr .7fr}.hero-art{height:250px}}
+@media(max-width:650px){.nav{height:62px}.navlinks{display:none}.brand{font-size:17px}.hero{padding:42px 0 20px;grid-template-columns:1fr}.hero-art{height:170px}.hero h1{letter-spacing:-2px}.hero p{font-size:13px}.searchbar{gap:7px}.pillbtn{padding:0 12px;font-size:12px}.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.card h3{font-size:11px}.meta{font-size:10px}.section{padding:17px 0 24px}.detail-top{grid-template-columns:105px 1fr;gap:14px;padding:16px}.detail-copy h2{font-size:19px}.detail-copy p{font-size:11px;margin:7px 0}.facts{grid-template-columns:repeat(2,1fr);gap:6px}.fact{padding:7px}.fact b{font-size:10px}.detail-body{padding:15px}.availability{grid-template-columns:repeat(2,1fr)}.modal{padding:8px}.detail{margin:10px auto}.close{padding:6px 9px;font-size:11px}}
+@media(max-width:360px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero h1{font-size:36px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><div class="brand">TALHA <span>X</span> SKILL</div><nav class="navlinks"><a href="#home">Home</a><a href="#popular">Popular</a><a href="#recent">Recently Added</a><a href="#movies">Movies</a><a href="#upcoming">Upcoming</a></nav><button class="pillbtn" onclick="document.getElementById('search').focus()">⌕ Search</button></div></header>
+<main class="wrap" id="home">
+<section class="hero"><div><div class="eyebrow">THE ANIME DATABASE EXPERIENCE</div><h1>Discover your next<br><span>anime obsession.</span></h1><p>Explore anime worlds, check seasons, compare ratings and find the details behind every story — all in one place.</p><div class="searchbar"><div class="searchbox"><span class="search-icon">⌕</span><input id="search" type="search" placeholder="Search anime titles..." autocomplete="off"></div><button class="pillbtn" id="searchBtn">Search</button></div></div><div class="hero-art"><div class="hero-stamp">YOUR ANIME UNIVERSE<b>TALHA X SKILL</b>DISCOVER • EXPLORE • REPEAT</div></div></section>
+<div class="notice"><strong>Data transparency:</strong> Anime titles, posters, genres, ratings, synopsis and episode totals are loaded from the free Kitsu public API. Streaming services and dub languages are marked <strong>Not verified</strong> unless a source is explicitly confirmed. This demo does not guess availability.</div>
+<section class="section" id="popular"><div class="section-head"><div><h2>Popular Anime</h2><p>Fan favourites to start exploring</p></div><button class="tiny-link" onclick="showAll()">View all anime ↗</button></div><div class="filters" id="genres"><button class="filter active" data-genre="All">All</button><button class="filter" data-genre="Action">Action</button><button class="filter" data-genre="Adventure">Adventure</button><button class="filter" data-genre="Fantasy">Fantasy</button><button class="filter" data-genre="Comedy">Comedy</button><button class="filter" data-genre="Drama">Drama</button><button class="filter" data-genre="Romance">Romance</button><button class="filter" data-genre="Sports">Sports</button><button class="filter" data-genre="Supernatural">Supernatural</button></div><div class="grid" id="animeGrid"><div class="loading">Connecting to Jikan… Anime cards will appear as data loads.</div></div><div style="text-align:center;margin-top:16px"><button class="pillbtn" onclick="reloadData()">↻ Reload anime data</button></div></section>
+<section class="section" id="recent"><div class="section-head"><div><h2>Recently Added</h2><p>Latest additions to this database list</p></div></div><div class="grid" id="recentGrid"></div></section>
+<section class="section" id="movies"><div class="section-head"><div><h2>Anime Movies</h2><p>Movie picks from the anime catalogue</p></div></div><div class="grid" id="movieGrid"><div class="loading">Loading movie recommendations…</div></div></section>
+<section class="section" id="upcoming"><div class="section-head"><div><h2>Upcoming Anime</h2><p>Upcoming titles listed by MyAnimeList data</p></div></div><div class="grid" id="upcomingGrid"><div class="loading">Loading upcoming titles…</div></div></section>
+</main>
+<footer class="wrap footer"><div><b>TALHA X SKILL</b><div style="margin-top:7px">A fan-made anime discovery database.</div></div><div>Anime data via Jikan API · MyAnimeList<br>Streaming and dub details require independent verification.</div></footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Anime details"><div class="detail" id="detail"></div></div><div class="toast" id="toast"></div>
+<script>
+const API='https://kitsu.app/api/edge';
+const TITLES=['Solo Leveling','Naruto','Naruto Shippuden','One Piece','Dragon Ball','Dragon Ball Z','Dragon Ball Super','Tokyo Revengers','Demon Slayer: Kimetsu no Yaiba','Jujutsu Kaisen','Attack on Titan','Death Note','Bleach','Black Clover','My Hero Academia','Hunter x Hunter (2011)','Chainsaw Man','Blue Lock','Haikyu!!','Vinland Saga','Spy x Family','Fullmetal Alchemist: Brotherhood','One Punch Man','Mob Psycho 100','Sword Art Online','Classroom of the Elite','The Eminence in Shadow','Dr. Stone','Re:Zero kara Hajimeru Isekai Seikatsu','Fire Force'];
+let anime=[],filtered=[],activeGenre='All',searchTerm='',extraMovies=[],extraUpcoming=[];
+const $=id=>document.getElementById(id);
+function escapeHTML(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function api(path){
+  let last;
+  for(let n=0;n<3;n++){
+    try{
+      const r=await fetch(API+path,{headers:{'Accept':'application/vnd.api+json'}});
+      if(!r.ok)throw new Error('Kitsu API '+r.status);
+      return await r.json();
+    }catch(e){last=e;await sleep(800*(n+1))}
+  }
+  throw last||new Error('Kitsu API unavailable');
+}
+function mapKitsu(item,included=[]){
+  const a=item.attributes||{}, rel=item.relationships?.categories?.data||[];
+  const byId=new Map(included.filter(x=>x.type==='categories').map(x=>[String(x.id),x.attributes?.title||x.attributes?.name||'']));
+  const genres=rel.map(x=>byId.get(String(x.id))).filter(Boolean).map(name=>({name}));
+  const title=a.titles?.en||a.titles?.en_jp||a.canonicalTitle||'Untitled anime';
+  const poster=a.posterImage?.large||a.posterImage?.original||a.posterImage?.medium||'';
+  const rating=a.averageRating?Number(a.averageRating)/10:null;
+  const year=a.startDate?Number(a.startDate.slice(0,4)):null;
+  const status=a.status==='current'?'Currently Airing':a.status==='upcoming'?'Not yet aired':a.status==='finished'?'Finished Airing':(a.status||'Unknown');
+  return {mal_id:Number(item.id),title,title_english:title,images:{jpg:{large_image_url:poster,image_url:poster}},score:rating,year,type:a.subtype||'Anime',status,episodes:a.episodeCount??null,synopsis:a.synopsis||'',genres,studios:[],_source:'Kitsu',_kitsuId:item.id};
+}
+async function fetchSearch(title){
+  const params=new URLSearchParams();
+  params.set('filter[text]',title);params.set('page[limit]','5');params.set('include','categories');
+  const d=await api('/anime?'+params.toString());
+  const items=d.data||[];
+  if(!items.length)return null;
+  const normalized=title.toLowerCase().replace(/[^a-z0-9]/g,'');
+  let item=items.find(x=>{
+    const a=x.attributes||{};
+    const candidates=[a.canonicalTitle,a.titles?.en,a.titles?.en_jp].filter(Boolean).map(v=>v.toLowerCase().replace(/[^a-z0-9]/g,''));
+    return candidates.some(v=>v===normalized);
+  })||items[0];
+  return mapKitsu(item,d.included||[]);
+}
+function card(a){
+  const img=a.images?.jpg?.large_image_url||a.images?.jpg?.image_url||'';
+  const title=a.title_english||a.title||'Unknown title';
+  const score=a.score?Number(a.score).toFixed(1):'N/A';
+  return `<article class="card" tabindex="0" role="button" aria-label="Open ${escapeHTML(title)} details" onclick="openAnime(${a.mal_id})" onkeydown="if(event.key==='Enter')openAnime(${a.mal_id})"><div class="poster">${img?`<img loading="lazy" src="${escapeHTML(img)}" alt="${escapeHTML(title)} poster" onload="this.parentElement.querySelector('.fallback')?.remove()" onerror="this.remove()">`:''}<span class="fallback">${escapeHTML(title)}</span><span class="score">${score}</span></div><h3>${escapeHTML(title)}</h3><div class="meta">${escapeHTML(a.year||'Year N/A')} · ${escapeHTML(a.type||'Anime')}</div><div class="status">${escapeHTML(a.status||'Info loading')}</div></article>`;
+}
+function renderGrid(target,list){$(target).innerHTML=list.length?list.map(card).join(''):'<div class="empty">No titles available in this section yet.</div>'}
+function applyFilters(){
+  filtered=anime.filter(a=>{
+    const name=(a.title_english||a.title||'').toLowerCase();
+    const match=name.includes(searchTerm.toLowerCase());
+    const genre=activeGenre==='All'||(a.genres||[]).some(g=>g.name.toLowerCase()===activeGenre.toLowerCase());
+    return match&&genre;
+  });
+  renderGrid('animeGrid',filtered);
+}
+function renderAll(){
+  applyFilters();
+  renderGrid('recentGrid',[...anime].slice(-6).reverse());
+  renderGrid('movieGrid',extraMovies);
+  renderGrid('upcomingGrid',extraUpcoming);
+}
+async function loadExtraSections(){
+  try{
+    const [m,u]=await Promise.all([
+      api('/anime?filter%5Bsubtype%5D=movie&page%5Blimit%5D=6&sort=-averageRating&include=categories'),
+      api('/anime?filter%5Bstatus%5D=upcoming&page%5Blimit%5D=6&sort=-userCount&include=categories')
+    ]);
+    extraMovies=(m.data||[]).map(x=>mapKitsu(x,m.included||[]));
+    extraUpcoming=(u.data||[]).map(x=>mapKitsu(x,u.included||[]));
+    renderGrid('movieGrid',extraMovies);renderGrid('upcomingGrid',extraUpcoming);
+  }catch(e){
+    $('movieGrid').innerHTML='<div class="empty">Movie list is temporarily unavailable.</div>';
+    $('upcomingGrid').innerHTML='<div class="empty">Upcoming list is temporarily unavailable.</div>';
+  }
+}
+async function loadAnime(){
+  const cacheKey='txs_kitsu_cache_v1';
+  try{
+    const cached=JSON.parse(localStorage.getItem(cacheKey)||'null');
+    if(cached&&Date.now()-cached.time<86400000){anime=cached.data||[];renderAll()}
+  }catch(e){}
+  const found=[...anime];
+  $('animeGrid').innerHTML=found.length?'':'<div class="loading">Connecting to the anime database…</div>';
+  for(const title of TITLES){
+    if(found.some(x=>(x.title||'').toLowerCase()===(title||'').toLowerCase()))continue;
+    try{
+      const item=await fetchSearch(title);
+      if(item&&!found.some(x=>x.mal_id===item.mal_id)){
+        found.push(item);anime=[...found];renderAll();
+        try{localStorage.setItem(cacheKey,JSON.stringify({time:Date.now(),data:anime}))}catch(e){}
+      }
+    }catch(e){}
+    await sleep(1100);
+  }
+  if(found.length){anime=found;renderAll()}
+  else{$('animeGrid').innerHTML='<div class="empty">Could not connect to Kitsu. Check your internet connection and tap Reload Anime Data.</div>'}
+  loadExtraSections();
+}
+$('search').addEventListener('input',e=>{searchTerm=e.target.value;applyFilters()});
+$('searchBtn').onclick=()=>{searchTerm=$('search').value;applyFilters();$('popular').scrollIntoView({behavior:'smooth'})};
+$('genres').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-genre]');if(!b)return;
+  activeGenre=b.dataset.genre;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));applyFilters();
+});
+function reloadData(){
+  localStorage.removeItem('txs_kitsu_cache_v1');anime=[];extraMovies=[];extraUpcoming=[];
+  $('animeGrid').innerHTML='<div class="loading">Reloading anime catalogue…</div>';loadAnime();
+}
+function showAll(){
+  activeGenre='All';searchTerm='';$('search').value='';
+  document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x.dataset.genre==='All'));
+  applyFilters();$('popular').scrollIntoView({behavior:'smooth'});
+}
+function platformHTML(){return ['Crunchyroll','Netflix','Amazon Prime Video','JioHotstar','Muse Asia','YouTube'].map(n=>`<div class="avail"><b>${n}</b><span class="unknown">Not verified</span></div>`).join('')}
+function openAnime(id){
+  const a=[...anime,...extraMovies,...extraUpcoming].find(x=>x.mal_id===id);if(!a)return;
+  const title=a.title_english||a.title;
+  const img=a.images?.jpg?.large_image_url||a.images?.jpg?.image_url||'';
+  const genres=(a.genres||[]).map(g=>`<span class="tag">${escapeHTML(g.name)}</span>`).join('')||'<span class="tag">Not listed by source</span>';
+  const year=a.year||'Unknown',eps=a.episodes??'Not listed';
+  const score=a.score?Number(a.score).toFixed(2)+'/10':'Not rated';
+  const synopsis=a.synopsis||'No synopsis is available from the current Kitsu record.';
+  const status=a.status||'Unknown';
+  const studios='Not listed by Kitsu record';
+  $('detail').innerHTML=`<div class="detail-top"><img class="detail-poster" src="${escapeHTML(img)}" alt="${escapeHTML(title)} poster" onerror="this.style.visibility='hidden'"><div class="detail-copy"><button class="close" onclick="closeModal()">✕ Close</button><div class="eyebrow">ANIME DETAILS</div><h2>${escapeHTML(title)}</h2><div class="tags">${genres}</div><p>${escapeHTML(synopsis)}</p><div class="facts"><div class="fact"><small>RELEASE YEAR</small><b>${escapeHTML(year)}</b></div><div class="fact"><small>RATING</small><b>★ ${escapeHTML(score)}</b></div><div class="fact"><small>STUDIO</small><b>${escapeHTML(studios)}</b></div><div class="fact"><small>STATUS</small><b>${escapeHTML(status)}</b></div><div class="fact"><small>EPISODES</small><b>${escapeHTML(eps)}</b></div><div class="fact"><small>SEASONS</small><b>Not reliably listed</b></div></div></div></div><div class="detail-body"><h3>Season-wise information</h3><div class="season"><div class="season-head"><b>${escapeHTML(a.title||title)}</b><span class="tag">${escapeHTML(eps)} episodes</span></div><p>Release year: ${escapeHTML(year)}. The catalogue record describes this anime entry; it does not confirm the complete franchise season breakdown.</p><p><b>Audio / dub languages:</b> Hindi — <span class="unknown">Not verified</span> · English — <span class="unknown">Not verified</span> · Japanese — <span class="unknown">Not verified</span> · Other languages — <span class="unknown">Not verified</span></p></div><h3>Streaming availability</h3><div class="availability">${platformHTML()}</div><p class="modal-note">Streaming and dub labels are intentionally marked “Not verified”. Kitsu catalogue metadata does not establish current regional streaming rights or language availability. Check each service directly for current availability in your country.</p><h3>Source & data quality</h3><p class="modal-note">Catalogue metadata and poster artwork are fetched from Kitsu. Ratings and episode totals reflect the API response at the time this page loads and may change. This is an independent fan-made demo and is not affiliated with Kitsu or any streaming platform.</p></div>`;
+  $('modal').classList.add('open');document.body.style.overflow='hidden';
+}
+function closeModal(){$('modal').classList.remove('open');document.body.style.overflow=''}
+$('modal').addEventListener('click',e=>{if(e.target===$('modal'))closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+loadAnime();
+</script>
+</body></html>
